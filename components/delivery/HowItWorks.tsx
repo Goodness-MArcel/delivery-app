@@ -113,7 +113,7 @@ export default function HowItWorks() {
                   variants={stepVariant}
                   className="flex gap-6 group"
                   whileHover={{ x: 10 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}   {/* ← Transition moved here */}
+                  transition={{ duration: 0.6, ease: "easeOut" }}  
                 >
                   {/* Step Number */}
                   <motion.div 
