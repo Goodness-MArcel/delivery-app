@@ -44,8 +44,7 @@ export default function HowItWorks() {
     hidden: { opacity: 0, x: -40 },
     visible: { 
       opacity: 1, 
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      x: 0 
     },
   };
 
@@ -114,6 +113,7 @@ export default function HowItWorks() {
                   variants={stepVariant}
                   className="flex gap-6 group"
                   whileHover={{ x: 10 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}   {/* ← Transition moved here */}
                 >
                   {/* Step Number */}
                   <motion.div 
