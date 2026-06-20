@@ -92,7 +92,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
-          © 2026 BikeDash Nigeria. Fast • Reliable • On a Bike.
+          © 2026 ITR errands Nigeria. Fast • Reliable • On a Bike.
         </div>
       </div>
     </footer>
