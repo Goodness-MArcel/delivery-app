@@ -81,11 +81,11 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               <span className="text-2xl">🏍️</span>
               <div>
-                <p className="font-semibold">500+ Riders</p>
+                <p className="font-semibold text-nowrap">500+ Riders</p>
                 <p className="text-emerald-200 text-xs">Online now</p>
               </div>
             </div>
-            <div>⭐ 4.95 (8,450 reviews)</div>
+            <div className="text-nowrap">⭐ 4.95 (8,450 reviews)</div>
           </motion.div>
         </div>
 

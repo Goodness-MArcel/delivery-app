@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { Package, User, MapPin, Bell, Menu, X } from 'lucide-react';
 import { useState } from 'react';
@@ -14,11 +15,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-emerald-600 rounded-2xl flex items-center justify-center text-white text-2xl flex-shrink-0">
-              🏍️
+            <div className="w-10 h-10 rounded-2xl overflow-hidden bg-white shadow-sm flex items-center justify-center">
+              <Image
+                src="/LOGO.png"
+                alt="ITR errands logo"
+                width={40}
+                height={40}
+                className="object-cover"
+              />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">BikeDash</h1>
+              <h1 className="text-xl font-bold text-gray-900">ITR errands</h1>
               <p className="text-[10px] text-gray-500 -mt-1">Courier Delivery</p>
             </div>
           </div>

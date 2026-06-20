@@ -28,24 +28,17 @@ export default function HowItWorks() {
     },
   ];
 
-  // Animation Variants
   const containerVariant = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
     },
   };
 
   const stepVariant = {
     hidden: { opacity: 0, x: -40 },
-    visible: { 
-      opacity: 1, 
-      x: 0 
-    },
+    visible: { opacity: 1, x: 0 },
   };
 
   return (
@@ -73,7 +66,7 @@ export default function HowItWorks() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          {/* ==================== LEFT COLUMN - ANIMATION ==================== */}
+          {/* LEFT COLUMN - ANIMATION */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -89,16 +82,12 @@ export default function HowItWorks() {
                 loop={true}
                 autoplay={true}
                 backgroundColor="transparent"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  maxHeight: "560px",
-                }}
+                style={{ width: "100%", height: "100%", maxHeight: "560px" }}
               />
             </div>
           </motion.div>
 
-          {/* ==================== RIGHT COLUMN - STEPS ==================== */}
+          {/* RIGHT COLUMN - STEPS */}
           <motion.div
             variants={containerVariant}
             initial="hidden"
@@ -106,14 +95,24 @@ export default function HowItWorks() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="space-y-12">
+            {/* Vertical Line - Improved */}
+            <motion.div 
+              className="absolute left-[23px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-emerald-500 via-teal-500 to-emerald-300"
+              initial={{ scaleY: 0, originY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              style={{ zIndex: 0 }}   
+            />
+
+            <div className="space-y-12 relative z-10">
               {steps.map((step, index) => (
                 <motion.div
                   key={index}
                   variants={stepVariant}
                   className="flex gap-6 group"
                   whileHover={{ x: 10 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}  
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                   {/* Step Number */}
                   <motion.div 
@@ -121,7 +120,7 @@ export default function HowItWorks() {
                     whileHover={{ scale: 1.15, rotate: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold text-xl shadow-lg">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold text-xl shadow-lg z-10 relative">
                       {step.number}
                     </div>
                   </motion.div>
@@ -138,15 +137,6 @@ export default function HowItWorks() {
                 </motion.div>
               ))}
             </div>
-
-            {/* Animated Vertical Line */}
-            <motion.div 
-              className="absolute left-[23px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-emerald-500 via-teal-500 to-emerald-300 -z-10"
-              initial={{ scaleY: 0, originY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-            />
           </motion.div>
         </div>
       </div>

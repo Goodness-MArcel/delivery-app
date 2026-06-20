@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MapPin, Mail, Phone } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import { 
   faXTwitter, 
   faFacebookF, 
@@ -14,10 +15,16 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl">
-                🏍️
+              <div className="w-10 h-10  rounded-2xl flex items-center justify-center text-white text-3xl">
+              <Image 
+                src="/LOGO.png"
+                alt="BikeDash Logo"
+                width={40}
+                height={40}
+                className="rounded-2xl"
+              />
               </div>
-              <h3 className="text-white text-2xl font-bold">BikeDash</h3>
+              <h3 className="text-white text-2xl font-bold">ITR errands</h3>
             </div>
             <p className="text-sm max-w-xs">
               Lightning-fast bike courier service for packages and documents in Lagos.
@@ -26,7 +33,7 @@ export default function Footer() {
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-emerald-600" />
-                <span>University of Lagos, Akoka</span>
+                <span>Owerri, Imo State</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-emerald-600" />
